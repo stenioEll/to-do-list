@@ -3,6 +3,7 @@ The To-Do List App is a simple and user-friendly task management application tha
 
 #Features
 - Add new tasks with a task name.
+- Order Tasks
 - Mark tasks as completed to keep track of your progress.
 - Delete tasks to remove them from the list.
 - Each task and subtask can be individually marked as completed or deleted.
@@ -27,6 +28,6 @@ The To-Do List App is a simple and user-friendly task management application tha
 - Enter your name and the name of the list in the input fields.
 - Add a new task by entering the task name and clicking the "+" button.
 - Mark tasks as completed by clicking the checkmark button.
-- Hover over a task to see and the trash icon.
+- Order tasks after unless two tasks
 - Delete tasks by clicking the trash icon.
--Mark subtasks as completed or delete them individually.
+
