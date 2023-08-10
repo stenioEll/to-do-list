@@ -38,7 +38,7 @@ function TaskCard({ task, index, isHovered, handleDelete, handleTaskCompletion, 
             name="completed"
             id="completed"
             onClick={() => handleTaskCompletion(task.id)}
-            className={`flex justify-center items-center text-lg ${task.completed ? ' bg-green-500 text-white border-green-400' : 'text-gray-400'} w-8 h-8 rounded-full shadow-xl border-2 border-gray-300 p-4 hover:bg-green-500 hover:text-white hover:border-green-400 bg-gray-100 cursor-pointer`}
+            className={`flex justify-center items-center text-lg ${task.completed ? ' bg-green-500 text-white border-green-400' : 'bg-gray-100 text-gray-400 border-gray-300'} w-8 h-8 rounded-full shadow-xl border-2 border-gray-300 p-4 hover:bg-green-500 hover:text-white hover:border-green-400 bg-gray-100 cursor-pointer`}
           >
             <FontAwesomeIcon icon={faCheck} />
           </button>
