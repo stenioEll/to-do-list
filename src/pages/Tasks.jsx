@@ -128,7 +128,7 @@ function Tasks() {
         <div className='flex justify-center'>
             <button
               type="button"
-              className={`mt-4  w-36 h-8 flex justify-center items-center border-gray-300 text-teal-700 p-4 hover:bg-green-500 hover:text-white hover:border-none bg-gray-100 cursor-pointer font-medium rounded-lg text-sm`}
+              className={`mt-4 w-36 h-8 flex justify-center items-center border-gray-300 text-teal-700 p-4 hover:bg-green-500 hover:text-white hover:border-none bg-gray-100 cursor-pointer font-medium rounded-lg text-sm`}
               onClick={handleSort}
             >
               <FontAwesomeIcon icon={faClock} className='mr-2'/>
@@ -136,7 +136,7 @@ function Tasks() {
             </button>
         </div>
           )} { tasks.length > 0 && (
-            <div className={`flex gap-8 ml-8 ${mobileView? 'flex flex-col gap-0' : ''}`}>
+            <div className={`flex  ${mobileView? 'flex flex-col gap-0 ml-0' : 'gap-8 ml-8'}`}>
                 <button
                   type="button"
                   className={`mt-4 border-gray-300 w-36 h-8 flex justify-center items-center text-teal-700 p-4 hover:bg-red-500 hover:text-white hover:border-none bg-gray-100 cursor-pointer font-medium rounded-lg text-sm`}
