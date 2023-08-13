@@ -31,3 +31,9 @@ The To-Do List App is a simple and user-friendly task management application tha
 - Order tasks after unless two tasks
 - Delete tasks by clicking the trash icon.
 
+#Usage DockerFile
+- Clone the repository: git clone <repository-url>
+- Build the application by running the command docker-compose build
+- Launch the application and its services using the command docker-compose up
+
+
