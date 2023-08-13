@@ -3,7 +3,7 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock } from '@fortawesome/free-solid-svg-icons';
+import { faClock, faTrash, faCheck } from '@fortawesome/free-solid-svg-icons';
 import logo from '../assets/checked.png'
 
 import TaskForm from '../components/TaskForm';
@@ -85,6 +85,15 @@ function Tasks() {
     setTasks(sortedTasks);
   };
 
+  const markAllCompleted = () => {
+    const updatedTasks = tasks.map(task => ({ ...task, completed: true }));
+    setTasks(updatedTasks);
+  };
+
+  const deleteAllTasks = () => {
+    setTasks([]);
+  };
+
   return (
     <div className={`flex flex-col  ${mobileView ? 'min-h-[100vh] overflow-x-hidden overflow-y-auto' : 'min-h-[100vh]'} bg-gradient-to-r font-poppins from-cyan-100 to-teal-200  animate-fade-up`}>
       <div className='flex  flex-col items-center  p-4 rounded-xl gap-4 animate-fade animate-delay-300'>
@@ -114,16 +123,37 @@ function Tasks() {
             setTasks={setTasks}
           />
         ))}
-      <div className='flex justify-center items-center mb-8'>
+      <div className={`flex justify-center items-center  mb-8 ${mobileView ? 'flex flex-col' : ''} `}>
       { tasks.length >= 2 && (
+        <div className='flex justify-center'>
             <button
               type="button"
-              className={`mt-4 border-gray-300 text-teal-700 p-4 hover:bg-green-500 hover:text-white hover:border-none bg-gray-100 cursor-pointer font-medium rounded-lg text-sm`}
+              className={`mt-4  w-36 h-8 flex justify-center items-center border-gray-300 text-teal-700 p-4 hover:bg-green-500 hover:text-white hover:border-none bg-gray-100 cursor-pointer font-medium rounded-lg text-sm`}
               onClick={handleSort}
             >
-              <FontAwesomeIcon icon={faClock} className="mr-2" />
-              Reorder Tasks
+              <FontAwesomeIcon icon={faClock} className='mr-2'/>
+              Reorder
             </button>
+        </div>
+          )} { tasks.length > 0 && (
+            <div className={`flex gap-8 ml-8 ${mobileView? 'flex flex-col gap-0' : ''}`}>
+                <button
+                  type="button"
+                  className={`mt-4 border-gray-300 w-36 h-8 flex justify-center items-center text-teal-700 p-4 hover:bg-red-500 hover:text-white hover:border-none bg-gray-100 cursor-pointer font-medium rounded-lg text-sm`}
+                  onClick={deleteAllTasks}
+                >
+                  <FontAwesomeIcon icon={faTrash} className='mr-2'/>
+                  Delete all
+                </button>
+                <button
+                type="button"
+                className={`mt-4 border-gray-300 w-36 h-8 flex justify-center items-center text-teal-700 p-4 hover:bg-green-500 hover:text-white hover:border-none bg-gray-100 cursor-pointer font-medium rounded-lg text-sm`}
+                onClick={markAllCompleted}
+              >
+                <FontAwesomeIcon icon={faCheck} className='mr-2'/>
+                Complete all
+              </button>
+            </div>
           )}
       </div>
       </div>
